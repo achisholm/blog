@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Duospace';
+    src:  url('/webfonts/iAWriterDuospace-Regular.woff2') format('woff2'),
+    url('/webfonts/iAWriterDuospace-Regular.woff2') format('woff');
+}
+
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    //"Duospace";
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    ".       main  ."
+    "footer footer footer"
+}
+
+.nav-menu {
+    grid-area: header;
+    border: 1px solid red;
+}
+
+.content {
+    grid-area: main;
+    max-width: 500px;
+    margin: auto;
+}
+
+.footer {
+    grid-area: footer;
+}
