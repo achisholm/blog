@@ -4,8 +4,8 @@
 
 # Site
 title: Alistair Chisholm
-subtitle: Yet another web development blog
-description: Writing about being a professional web developer
+subtitle: Yet another web development blog.
+description: Writing about being a professional front end web developer and designer
 author: Alistair Chisholm
 language:
 timezone:
@@ -42,7 +42,30 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -61,7 +84,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: Do MMMM YYYY
 time_format: HH:mm:ss
 
 # Pagination
