@@ -11,9 +11,9 @@ It may be the perfectionist in me but no matter what I’ve tried (and trust me,
 
 Not for the first time, I’ve decided to take regular blogging a bit more seriously. This time as a way to keep a diary of self-study progress and to document discoveries about all things related to web development / design, and as a record to hold myself accountable for taking projects all the way to completion.
 
-At the same time, the internet is amazingly both the ultimate productivity enhancement enabler and the ultimate distraction generator. With the latter in mind, I’ve taken some steps to ensure that posts get posted.
+At the same time, the internet is amazingly both the ultimate productivity enabler and the ultimate source of distraction. With the latter in mind, I’ve taken some steps to ensure that posts get posted.
 
-1. Set up a new ‘Person’ using Chrome titled `Alistair (focus)` copying across only a few select bookmarks that I’ll be using for studying, codingo or writing.
+1. Set up a new ‘Person’ using Chrome titled `Alistair (focus)` and have copyied across only a few select bookmarks that I’ll be using for studying, coding or writing.
 2. Enabled a Chrome extension to block social media sites. The extension I’m using is [Work Mode](http://www.workmode.org) which works the way I want (it abbruptly closes the tab if I end up on one of the blacklisted sites).
 3. Schedule a regular, uninterrupted period of focus time to either study, work toward completing basic development of the website or get some writing done.
 

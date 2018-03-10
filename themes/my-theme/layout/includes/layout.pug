@@ -10,23 +10,30 @@ doctype html
 html(lang=config.language)
   head
     meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title= pageTitle
     if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-      //- stylesheets list from config.yml
+      // Stylesheets list from config.yml
       each url in theme.stylesheets
         link(rel='stylesheet', href=url)
     link(rel="icon", href=config.root + 'img/favicon.png')
 
   body
+
     // Navigation menu.
-    nav.nav-menu
+    nav.nav-menu(role="navigation")
+      <a href="#main">Skip to main content</a>
       each url, label in theme.menu
         a(href=url)= label
-    .content
+
+    // Main Content
+    main.content#main(role="main")
         if body
           div!= body
         else
           block content
+
+    // Site Footer
     .footer
       span Sitey by
       span= ' ' + config.author + '.'
