@@ -7,7 +7,7 @@
 - pageTitle += ' [ ' + config.title + ' ]'
 
 doctype html
-html(lang=config.language)
+html(lang="en-GB")
   head
     meta(charset='UTF-8')
     meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -17,14 +17,13 @@ html(lang=config.language)
       each url in theme.stylesheets
         link(rel='stylesheet', href=url)
     link(rel="icon", href=config.root + 'img/favicon.png')
-
   body
 
     // Navigation menu.
     nav.nav-menu(role="navigation")
-      <a href="#main">Skip to main content</a>
+      <a class="" href="#main">Skip to main content</a>
       each url, label in theme.menu
-        a(href=url)= label
+        a.nav-menu__item(href=url)= label
 
     // Main Content
     main.content#main(role="main")
@@ -35,11 +34,16 @@ html(lang=config.language)
 
     // Site Footer
     .footer
-      span Sitey by
-      span= ' ' + config.author + '.'
-      br
+      p= `© ${(new Date()).getFullYear()} ${config.author}.`
       a(href=config.root) Home
-    if theme.scripts !== undefined && theme.scripts.length > 0
-      //- scripts list from config.yml
-      each url in theme.scripts
-        script(src=url)
+      ul
+        li
+          a(href="https://twitter.com/ayepod", rel="me") @ayepod on Twitter
+          li
+            a(href="https://github.com/achisholm", rel="me") Github
+          li
+            a(href="mailto:alistair@fastmail.com", rel="me") alistair@fastmail.com
+  if theme.scripts !== undefined && theme.scripts.length > 0
+    //- scripts list from config.yml
+    each url in theme.scripts
+      script(src=url)

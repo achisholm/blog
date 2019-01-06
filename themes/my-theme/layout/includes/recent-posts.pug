@@ -1,12 +1,9 @@
+.recent-posts
+  h2 Recent Posts
+  each post in page.posts.sort('date', -1).limit(10).toArray()
 
-if page.posts.length > 0
-  #recent-posts
-    h2 Recent Posts
-    each post in page.posts.sort('date', -1).limit(10).toArray()
-      .recent-post-item
-        a(href=config.root + post.path)= post.title
-        if post.date
-        p
-          small
-            time(datetime=post.date.toJSON())= date(post.date, date_format)
-
+    .recent-post-item
+      a.recent-post-item__title(href=config.root + post.path)= post.title
+      if post.date
+      p.recent-post-item__time
+        time(datetime=post.date.toJSON())= date(post.date, date_format)

@@ -1,20 +1,18 @@
-# html lang
-language: en
-
 # main menu navigation
 menu:
   Home: /
-#  About: /about
+  Blog: /blog
+  About: /about
 #  Contact: /contact
 #  Archives: /archives
 
-# Miscelaneous
+# Miscellaneous
 favicon: /favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /css/my-theme.css
+- /css/core.css
 
 # scripts loaded in the end of the body
 scripts:
-- /js/my-theme.js
+- /js/core.js
