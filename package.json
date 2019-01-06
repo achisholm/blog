@@ -17,5 +17,8 @@
     "hexo-renderer-markdown-it": "^3.4.1",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.6.0"
   }
 }
