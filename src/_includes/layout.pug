@@ -1,20 +1,19 @@
-- var pageTitle = ''
-
 doctype html
 html(lang="en-GB")
   head
     meta(charset='UTF-8')
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    title= pageTitle
-    link(rel='stylesheet', href=url)
+    title page title
+    link(rel='stylesheet', href='/css/core.css')
     link(rel="icon", href='/favicon.png')
   body
 
     // Navigation menu.
     nav.nav-menu(role="navigation")
-      <a class="" href="#main">Skip to main content</a>
-      //each url, label in theme.menu
-        a.nav-menu__item(href=url)= label
+      a(href="#main") Skip to main content
+      a.nav-menu__item(href='/') Home
+      a.nav-menu__item(href='/posts') Posts
+      a.nav-menu__item(href='/about') About
 
     // Main Content
     main.content#main(role="main")
@@ -25,15 +24,13 @@ html(lang="en-GB")
 
     // Site Footer
     .footer
-      p= `© ${(new Date()).getFullYear()} Alistair Chisholm.`
-      a(href='/') Home
+      p= `Â© Copyright ${(new Date()).getFullYear()} Alistair Chisholm.`
       ul
         li
-          a(href="https://twitter.com/ayepod", rel="me") @ayepod on Twitter
-          li
-            a(href="https://github.com/achisholm", rel="me") Github
-          li
-            a(href="mailto:alistair@fastmail.com", rel="me") alistair@fastmail.com
+          a(href="https://github.com/achisholm", rel="me") Github
+        li
+          a(href="https://twitter.com/ayepod", rel="me") Twitter
+        li
+          a(href="mailto:alistair@fastmail.com", rel="me") Email
 
-      //
-        script(src=url)
+  script(src=url)
