@@ -5,9 +5,7 @@
   "scripts": {
     "start": "eleventy --serve"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.6.0",
     "gulp": "^4.0.0",

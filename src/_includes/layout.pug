@@ -3,34 +3,28 @@ html(lang="en-GB")
   head
     meta(charset='UTF-8')
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    title page title
-    link(rel='stylesheet', href='/css/core.css')
-    link(rel="icon", href='/favicon.png')
+    meta(property="og:title" content="Alistair Chisholm")
+    meta(property="og:site_name" content="alistairchisholm.co.uk")
+    meta(property="og:description" content="My website. There are many like it but this one is mine.")
+    meta(property="og:image" content="/images/social/screenshot.jpg")
+    meta(property="og:url" content="https://alistairchisholm.co.uk")
+    meta(name="twitter:site" content="@ayepod")
+    meta(name="twitter:card" content="summary_large_image")
+    block vars
+    title #{title}
+    link(rel="stylesheet" href="/css/core.css")
   body
-
-    // Navigation menu.
-    nav.nav-menu(role="navigation")
-      a(href="#main") Skip to main content
-      a.nav-menu__item(href='/') Home
-      a.nav-menu__item(href='/posts') Posts
-      a.nav-menu__item(href='/about') About
-
-    // Main Content
-    main.content#main(role="main")
-        if body
-          div!= body
-        else
-          block content
-
-    // Site Footer
-    .footer
-      p= `© Copyright ${(new Date()).getFullYear()} Alistair Chisholm.`
-      ul
-        li
-          a(href="https://github.com/achisholm", rel="me") Github
-        li
-          a(href="https://twitter.com/ayepod", rel="me") Twitter
-        li
-          a(href="mailto:alistair@fastmail.com", rel="me") Email
-
-  script(src=url)
+    nav.app-nav
+      .button.menu-button#menu-button MENU
+      .app-nav__items
+        a.app-nav__item.js-menu-item.is-active(href='/') Home
+        a.app-nav__item.js-menu-item(href='/notes') Notes
+        a.app-nav__item.js-menu-item(href='/about') About
+        a.app-nav__item.js-menu-item(href='/contact') Contact
+    .profile Alistair Chisholm
+      .profile__avatar
+    .container
+      .container__content
+        block content
+    block footer 
+      script(src="/scripts/core.js")
