@@ -3,13 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "eleventy --serve"
+    "autoprefixer": "postcss -u autoprefixer -r public/css/*",
+    "build": "run-s build:*",
+    "build:css": "run-s scss autoprefixer",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "scss": "node-sass --output public/css styles",
+    "serve": "browser-sync start --server 'public' --files 'public/css/*.css, public/scripts/*.js, **/*.html, !node_modules/**/*.html' --no-notify",
+    "start": "eleventy --serve",
+    "watch": "run-p serve watch:*",
+    "watch:css": "nodemon -ext scss --exec \"npm run build:css\"",
+    "watch:content": "eleventy --watch"
   },
   "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.6.0",
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-shell": "^0.6.5"
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.1"
   }
 }
