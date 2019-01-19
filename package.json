@@ -5,6 +5,7 @@
   "scripts": {
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
     "build": "run-s build:*",
+    "build:content": "eleventy",
     "build:css": "run-s scss autoprefixer",
     "debug": "DEBUG=Eleventy* eleventy",
     "scss": "node-sass --output public/css styles",
