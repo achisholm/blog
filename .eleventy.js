@@ -8,11 +8,15 @@ module.exports = function (config) {
         return collection.getFilteredByGlob('**/*.md');
     });
 
+    // Copy the `scripts/` directory
+    config.addPassthroughCopy('scripts');
+
     return {
         dir: {
-            input: "src",
+            input: ".",
             output: "public"
         },
-        dataTemplateEngine: "pug"
+        dataTemplateEngine: "pug",
+        passthroughFileCopy: true
     }
 }
