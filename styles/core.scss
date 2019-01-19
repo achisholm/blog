@@ -4,6 +4,7 @@
 // @import "mixins";
 
 @import "globals";
+@import "forms";
 
 // UI Components
 @import "profile";
@@ -14,7 +15,7 @@
   display: flex;
   align-items: center;
   height: 100%;
-  
+
   &__heading {
     font-weight: normal;
     font-size: 48px;
@@ -31,7 +32,7 @@ a {
   color: var(--text-color);
   text-decoration-color: var(--base-color);
   text-underline-position: under;
-  
+
   &:hover {
     color: black;
     text-decoration-color: var(--secondary-color);
@@ -39,7 +40,7 @@ a {
   }
 }
 
-.heading, 
+.heading,
 .para {
   margin-bottom: calc(var(--base-unit));
 }
@@ -65,7 +66,7 @@ a {
 
 
 .grid {
-  display: grid;  
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: var(--base-unit);
 

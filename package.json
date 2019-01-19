@@ -12,8 +12,8 @@
     "serve": "browser-sync start --server 'public' --files 'public/css/*.css, public/scripts/*.js, **/*.html, !node_modules/**/*.html' --no-notify",
     "start": "eleventy --serve",
     "watch": "run-p serve watch:*",
-    "watch:css": "nodemon -ext scss --exec \"npm run build:css\"",
-    "watch:content": "eleventy --watch"
+    "watch:content": "eleventy --watch",
+    "watch:css": "nodemon --watch styles -ext scss --exec \"npm run scss\""
   },
   "dependencies": {},
   "devDependencies": {

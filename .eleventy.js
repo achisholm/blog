@@ -10,6 +10,7 @@ module.exports = function (config) {
 
     // Copy the `scripts/` directory
     config.addPassthroughCopy('scripts');
+    config.addPassthroughCopy('admin');
 
     return {
         dir: {
