@@ -1,0 +1,79 @@
+@import "reset";
+@import "codeblock";
+
+// @import "mixins";
+
+@import "globals";
+@import "forms";
+
+// UI Components
+@import "profile";
+@import "navigation";
+@import "container";
+
+.home {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &__heading {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 72px;
+    padding: 0 100px;
+  }
+}
+
+// =================
+// TYPE.
+// =================
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--base-color);
+  text-underline-position: under;
+
+  &:hover {
+    color: black;
+    text-decoration-color: var(--secondary-color);
+    // text-decoration-style: dotted;
+  }
+}
+
+.heading,
+.para {
+  margin-bottom: calc(var(--base-unit));
+}
+
+.heading {
+  font-size: calc(var(--base-unit) * 2);
+  font-weight: bold;
+}
+
+.para {
+  font-size: calc(var(--base-unit));
+}
+
+
+.block {
+  max-width: 75ch;
+  margin-bottom: calc(var(--base-unit));
+  // margin-left: auto;
+  margin-right: auto;
+  padding: 0 calc(var(--base-unit) * 3);
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: var(--base-unit);
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0 , 0.15);
+    padding: 2rem;
+  }
+}
