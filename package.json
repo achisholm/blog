@@ -13,7 +13,7 @@
     "start": "eleventy --serve",
     "watch": "run-p serve watch:*",
     "watch:content": "eleventy --watch",
-    "watch:css": "nodemon --watch styles -ext scss --exec \"npm run scss\""
+    "watch:css": "node-sass --watch styles/ -o public/css/"
   },
   "dependencies": {},
   "devDependencies": {

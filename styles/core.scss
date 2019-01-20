@@ -1,3 +1,4 @@
+@import "vars";
 @import "reset";
 @import "codeblock";
 
@@ -18,14 +19,17 @@
 
   &__heading {
     font-weight: normal;
-    font-size: 48px;
-    line-height: 72px;
-    padding: 0 100px;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 72px;
+      padding: 0 100px;
+    }
   }
 }
 
 // =================
-// TYPE.
+// TYPE STYLES.
 // =================
 
 a {
@@ -34,9 +38,8 @@ a {
   text-underline-position: under;
 
   &:hover {
-    color: black;
-    text-decoration-color: var(--secondary-color);
-    // text-decoration-style: dotted;
+    color: var(--text-color);
+    text-decoration-color: var(--text-color);    // text-decoration-style: dotted;
   }
 }
 

@@ -5,12 +5,14 @@ code {
   background: #eee;
   font-size: 13px;
 }
+
 code {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   border: 1px solid #ddd;
   padding: 0 5px;
 }
+
 pre {
   padding: 10px 15px;
   padding-bottom: 0;
@@ -19,11 +21,13 @@ pre {
   border-radius: 4px;
   border: 1px solid #ddd;
 }
+
 pre code {
   border: none;
   display: block;
   padding: 0;
 }
+
 .highlight {
   background: #eee;
   border: 1px solid #ddd;
@@ -34,29 +38,37 @@ pre code {
   overflow: auto;
   margin: 0;
 }
+
 .highlight figcaption {
   zoom: 1;
   margin: -5px 0 5px;
   font-size: 0.9em;
   color: #999;
 }
+
 .highlight figcaption:before,
+
 .highlight figcaption:after {
   content: "";
   display: table;
 }
+
 .highlight figcaption:after {
   clear: both;
 }
+
 .highlight figcaption a {
   float: right;
 }
+
 .highlight pre {
   padding: 0;
   border: none;
   background: none;
 }
+
 pre .comment,
+
 pre .title {
   color: #8e908c;
 }

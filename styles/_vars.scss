@@ -1,0 +1,39 @@
+
+$mobile-wide-width: 500px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-wide-width: 1400px;
+
+// Media Query Mixins.
+// ==========================================================================
+
+@mixin mobile-wide {
+    @media (min-width: #{$mobile-wide-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin desktop-wide {
+    @media (min-width: #{$desktop-wide-width}) {
+        @content;
+    }
+}
+
+
+
+// Z-Indexes.
+// ==========================================================================
+
+$z-menu-button: 9;

@@ -1,56 +1,58 @@
 //==============================================================================
-// GLOBAL STYLES.
+// Global Document Styles.
 //==============================================================================
 
-*, *:before, *:after {
-    box-sizing: inherit;   
+:root {
+  --base-color-h: 0;
+  --base-color-s: 100%;
+  --base-color-l: 50%;
+  --base-color-hsl: var(--base-color-h), var(--base-color-s), var(--base-color-l);
+  --base-color: hsla(var(--base-color-hsl), 1);
+  --secondary-color: #D94832;
+  --text-color: #212121;
+
+  --base-unit: 16px;
+  padding: var(--base-unit);
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  &:active .baseline-grid:after {
+    // :root:active .baseline-grid:after
+    opacity: 1;
   }
-  
-  
-  :root {
-    --base-color-hsl: 39, 92%, 58%;
-    --base-color: hsla(var(--base-color-hsl), 1);
-    --secondary-color: #D94832;
-    --text-color: #212121;
-    
-    --base-unit: 16px;
-    box-sizing: border-box;
-    background-color: var(--base-color);
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    
-    &:active .baseline-grid:after {
-      opacity: 1;
-    }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-size: var(--base-unit);
+  line-height: calc(var(--base-unit) * 2);
+  display: flex;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.baseline-grid {
+  //
+  position: relative;
+
+  &:after {
+    // .baseline-grid:after
+    background-image: url('data:image/svg+xml;utf8,<svg height="16" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" style="fill:rgba(255, 0, 0, 0.1)"/></svg>');
+    content: "";
+    display: block;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
   }
-  
-  body {
-    font-size: var(--base-unit);
-    line-height: calc(var(--base-unit) * 2);
-    display: flex;
-    margin: 0;
-    color: var(--text-color);
-  }
-  
-  .barba-container {
-    display: flex;
-  }
-  
-  .baseline-grid {
-    position: relative;
-  
-    &:after {
-      background-image: url('data:image/svg+xml;utf8,<svg height="16" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" style="fill:rgba(255, 0, 0, 0.1)"/></svg>');
-      content: "";
-      display: block;
-      pointer-events: none;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 9999;
-      position: absolute;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-  }
-  
+}

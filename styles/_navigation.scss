@@ -3,97 +3,146 @@
 //==============================================================================
 
 .app-nav {
-    // Sidebar area one the left.
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition-property: width;
-    transition-duration: .2s;
-    transition-timing-function: ease-in;
-    transition-delay: 75ms;
-    width: 120px;
-  
+  // Sidebar area on the left.
+  display: flex;
+  flex: 0 0 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  transition-property: flex-basis;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transition-delay: 75ms;
+
+  @include tablet {
+    //flex-basis: 120px;
+  }
+
   //------------------------------------------------------------------------------
   // Menu active - expand sidebar's width.
   //-----
-    .menu-active & {
-      // .menu-active .app-nav
-      width: 30vw;
-      transition-duration: .25s;
-      transition-timing-function: ease-out;
-      transition-delay: none;
+  .menu-active & {
+    // .menu-active .app-nav
+    transition-duration: .25s;
+    transition-timing-function: ease-out;
+    transition-delay: none;
+
+    @include tablet {
+      flex-basis: 30vw;
     }
-    
-    
+  }
+
+
   //------------------------------------------------------------------------------
   // Container for navigation menu items.
   //-----
-    &__items {
-      // .app-nav__items
-      // Menu container.
-      margin: auto 0 auto auto;
-      opacity: 0;
-      transition-property: opacity;
-      transition-duration: .2s;
-      transition-timing-function: ease;
-        
-      .menu-active & {
-        // .menu-active .app-nav__items
-        opacity: 1;
-      }
-    } 
-    
-    &__item {
-      // .app-nav__items
-      // Menu Item.
-      padding: var(--base-unit);
+  &__items {
+    // .app-nav__items
+    // Menu container.
+    // margin: auto 0 auto auto;
+    background: white;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    position: fixed;
+    bottom: 80px;
+    right: 0;
+
+    @include tablet {
+      background: transparent;
+      top: 80px;
+      right: auto;
+      bottom: auto;
+      left: 0;
+    }
+
+    .menu-active & {
+      // .menu-active .app-nav__items
+
+
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    // .app-nav__items
+    // Menu Item.
+    padding: var(--base-unit);
+    color: var(--text-color);
+    display: block;
+    text-align: right;
+    text-decoration-color: rgba(white, 0.3);
+    text-underline-position: under;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+    transform: scale3d(0,0,0);
+
+    &:hover {
+      color: var(--text-color);
+    }
+
+    @include tablet {
       color: rgba(white, 0.6);
-      display: block;
-      text-align: right;
-      text-decoration-color: rgba(white, 0.3);
-      text-underline-position: under;
-      font-size: 24px;
-      transition: transform 0.2s ease;
-      transform: scale3d(0,0,0);
-      
+
       &:hover {
         color: white;
       }
-     
-      .menu-active & {
-        // .menu-active .app-nav
-        transform: scale3d(1,1,1);
-      }
-      
-      
-      &.is-active {
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      
     }
-  }
-  
-  .button {
-    cursor: pointer;
-    user-select: none;
-    letter-spacing: .2em;
-    text-align: center;
-  }
-  
-  .menu-button {
-    position: absolute;
-    background-color: rgba(black ,0.1);
-    color: rgba(0,0,0,0.5);
-    padding: 3px 10px;
-    font-weight: bold;
-    border-radius: 3px;
-    margin: 20px;
-    width: 80px;
-  
+
     .menu-active & {
-      background-color: rgba(black, 0.3);
-      color: rgba(white, 0.7);
+      // .menu-active .app-nav
+      transform: scale3d(1, 1, 1);
     }
+
+
+    &.is-active {
+      color: var(--text-color);
+      font-weight: bold;
+      text-decoration: none;
+
+      @include tablet {
+        color: white;
+      }
+    }
+
   }
+}
+
+.button {
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: .2em;
+  text-align: center;
+}
+
+
+// ==========================================================================
+// MENU BUTTON.
+// ==========================================================================
+
+
+.menu-button {
+  z-index: $z-menu-button;
+  position: fixed;
+  background-color: rgba(black ,0.1);
+  color: rgba(0,0,0,0.5);
+  padding: 3px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: calc(var(--base-unit) * 2);
+  width: 80px;
+  bottom: 0;
+  right: 0;
+
+  @include tablet {
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+  }
+
+  .menu-active & {
+    background-color: rgba(black, 0.3);
+    color: rgba(white, 0.7);
+  }
+}
