@@ -3,6 +3,7 @@ backend:
   branch: master
 publish_mode: editorial_workflow
 media_folder: "public/images/uploads"
+public_folder: "."
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
@@ -12,4 +13,5 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
