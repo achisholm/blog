@@ -1,7 +1,9 @@
 backend:
   name: git-gateway
+  repo: achisholm/blog
   branch: master
 public_folder: "/"
+media_folder: "assets/uploads"
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
