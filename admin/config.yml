@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: achisholm/blog
+  name: git-gateway
+  branch: master
 publish_mode: editorial_workflow
 media_folder: "public/images/uploads"
 collections:
