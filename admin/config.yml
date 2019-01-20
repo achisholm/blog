@@ -12,6 +12,6 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime", optional: true}
-      - {label: "Tags", name: "tags", widget: "list", optional: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
