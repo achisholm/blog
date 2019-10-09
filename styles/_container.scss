@@ -3,13 +3,17 @@
 //==============================================================================
 
 .container {
+  // White bg content container.
   display: flex;
   flex: 1 1 auto;
   background-color: white;
   padding: var(--base-unit);
   box-shadow: 0 0 10px 10px rgba(black, 0.02);
+  border-radius: 20px;
 
   &__content {
+    // .container__content
+    // Scrollable content container.
     overflow: auto;
     width: 100%;
     padding-right: var(--base-unit);

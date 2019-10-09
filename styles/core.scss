@@ -1,23 +1,29 @@
 @import "vars";
+// @import "mixins";
 @import "reset";
 @import "codeblock";
-
-// @import "mixins";
 
 @import "globals";
 @import "forms";
 
-// UI Components
+// Components.
 @import "profile";
 @import "navigation";
 @import "container";
 
+// ============================================================================
+// HOME PAGE.
+// ============================================================================
+
 .home {
+  // Homepage content container.
   display: flex;
   align-items: center;
   height: 100%;
 
   &__heading {
+    // .home__heading
+    // Homepage main heading.
     font-weight: normal;
 
     @include tablet {
@@ -28,9 +34,9 @@
   }
 }
 
-// =================
-// TYPE STYLES.
-// =================
+// ============================================================================
+// TYPOGRAPHY.
+// ============================================================================
 
 a {
   color: var(--text-color);
@@ -38,8 +44,10 @@ a {
   text-underline-position: under;
 
   &:hover {
+    // a:hover
     color: var(--text-color);
-    text-decoration-color: var(--text-color);    // text-decoration-style: dotted;
+    text-decoration-color: var(--text-color);
+    // text-decoration-style: dotted;
   }
 }
 
@@ -66,14 +74,19 @@ a {
   padding: 0 calc(var(--base-unit) * 3);
 }
 
-
+// ============================================================================
+// GRID.
+// ============================================================================
 
 .grid {
+  // Grid container.
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: var(--base-unit);
 
   &__item {
+    // .grid__item
+    // Child element of a grid container.
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0 , 0.15);
