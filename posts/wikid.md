@@ -1,30 +1,48 @@
 ---
-title: Three tips for writing better CSS
-date: 2018-05-16
-description: I seem to be apart of the few lately, but I still love CSS.
+title: Writing better CSS
+date: 2020-12-11
+description: 
 tags:
   - css
 ---
-{{ description }}
+It seems to be an unpopular opinion, but I still love Cascading Stylesheets. Here are a few tips I have learnt for writing better CSS.
 
-It's not without its challenges, but nothing I don't experience when working with <abbr title='Hypertext Markup Language'>HTML</abbr> or JavaScript in my opinion.
+## 1. Always be reducing specificity
 
-Here are a few quick tips I have been thinking about lately with regards to writing better <abbr title='Cascading Stylesheets'>CSS</abbr>.
+Specificity &mdash; as a word, I find it's hard to pronounce. How a specificity value is calculated as a concept to grasp as a web developer, is even harder.
 
-## 1. Reduce far reaching styles
+My way of handling specificity has been to side-step the issue entirely by using selectors with just enough specificity, and no more.
 
-Be careful styling raw <abbr title='Hypertext Markup Language'>HTML</abbr> elements globally. Make careful use of the cascade. Globals are powerful and need to be throughly considered before being introduced.
+If all declarations have low and equal specificity, you are then in a great position to harness the power of the cascade. By that, I mean adjusting the specificity naturally by means of ordering as a way to override conflicting rules.
 
-For example, I get a little nervous when I see headings getting overly specific styling outside of a default `font-weight` and `font-size`. When you start to introduce colors, text transformations, I often see them having to be overridden farther down the document.
+## 2. Use The cascade to your advantage
 
-Try to reduce that amount of times you have to undo something you had previously declared farther up the cascade.
+By design, web browsers read the order in which you declare your CSS. Source order is a powerful and easily understandable way for browsers and also you to decide what rules should get priority.
 
-## 2. Whitespace
+Here is a sane order in which styles should be layered, starting with most general first, gradually increasing in specificity:
 
-If you are using a build system to minify your <abbr title='Cascading Stylesheets'>CSS</abbr>, whitespace is a free documentation tool. This is a small but handy tip I picked up from Harry Roberts, he does a great job explaining how [whitespace can be semantic](https://csswizardry.com/2017/05/writing-tidy-code/).
+- Global, generic
+- Base
+- UI component-specific
+- Page-specific
+- Atomic-level, utility
 
-## 3. Periodically check the output
+Whether you use a single stylesheet or need to split up stylesheets into separate files, the same rules apply.
 
-This may seem silly to some, "I know what the output will look like, I wrote it!", but Sass and tools alike do a great job of masking what you might expect in the output.
+Please, don't just tag on some changes at the end of your stylesheet. Use source order to help guide where this new feature should live.
 
-Periodically checking the output has often resulted in me refactoring a bit of my <abbr title='Cascading Stylesheets'>CSS</abbr> for the better of the project.
+## 3. Set global styles sparingly
+
+As a project scales up over time, the usefulness of global styles tends to diminish. Too often, early decisions (for example, let's make all links green, or let's set all headings to a particular font family, size & weight) won't seem such a fantastic idea when you frequently need to override them.
+
+If possible, just don't style bare HTML elements and you will probably thank yourself later.
+
+## 4. You might not need that reset
+
+If confronted with a vast amount of crossed-out rules in the Developer Tools inspector, it's generally a sign that your stylesheets can be simplified.
+
+There was a time where a CSS reset was helpful and in fact necessary to establish some kind of common baseline across browsers. These days, I'd say it's not so neccessary. I like to try removing a heavy-handed CSS reset and seeing what breaks, and more often than not, it is surprisingly little.
+
+## 5. Be generous with whitespace
+
+Whitespace is a free documentation tool, especially if you're using a pre-processor.
