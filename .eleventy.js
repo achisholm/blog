@@ -8,9 +8,10 @@ module.exports = function (config) {
         return collection.getFilteredByGlob('**/*.md');
     });
 
-    // Copy the `scripts/` directory
+    // Copy these directories
     config.addPassthroughCopy('scripts');
     config.addPassthroughCopy('admin');
+    config.addPassthroughCopy("images");
 
     return {
         dir: {
