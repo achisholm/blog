@@ -1,9 +1,11 @@
 ---
 title: Writing better CSS
 date: 2020-12-11
-description: 
+description: null
 tags:
   - css
+category:
+  - CSS
 ---
 It seems to be an unpopular opinion, but I still love Cascading Stylesheets. Here are a few tips I have learnt for writing better CSS.
 
