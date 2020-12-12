@@ -1,8 +1,12 @@
 extends _includes/layout
+block vars
+  - const title = "Notes", activeMenuItem = "notes"
 
 block content
-    h1.content__heading Posts
+    h1.content__heading Notes
 
     for post in collections.all
         div
-            a(href=post.url)= post.data.title
+            a(href=post.url)
+                h1= post.data.title
+                p= post.data.date

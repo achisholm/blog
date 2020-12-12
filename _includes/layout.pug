@@ -20,8 +20,8 @@ html(lang="en-GB")
     nav.app-nav
       .button.menu-button#menu-button MENU
       .app-nav__items
-        a.app-nav__item.js-menu-item.is-active(href='/') About
-        a.app-nav__item.js-menu-item(href='/notes') Notes
+        a.app-nav__item.js-menu-item(href='/')&attributes({class: (activeMenuItem == 'about' ? 'is-active': '')}) About
+        a.app-nav__item.js-menu-item(href='/notes')&attributes({class: (activeMenuItem == 'notes' ? 'is-active': '')}) Notes
 
     .profile Alistair Chisholm
       .profile__avatar
