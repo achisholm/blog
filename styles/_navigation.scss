@@ -9,9 +9,9 @@
   flex-direction: column;
   align-items: flex-start;
   transition-property: flex-basis;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in;
-  transition-delay: 75ms;
+  // transition-duration: 0.2s;
+  // transition-timing-function: ease-in;
+  // transition-delay: 75ms;
 
   @include tablet {
     //flex-basis: 120px;
@@ -22,12 +22,13 @@
   //-----
   .menu-active & {
     // .menu-active .app-nav
-    transition-duration: .25s;
-    transition-timing-function: ease-out;
-    transition-delay: none;
+    // transition-duration: .25s;
+    // transition-timing-function: ease-out;
+    // transition-delay: none;
 
     @include tablet {
-      flex-basis: 30vw;
+      flex-basis: 15vw;
+      min-width: 140px;
     }
   }
 

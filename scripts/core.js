@@ -1,15 +1,36 @@
 (function () {
   const root = document.querySelector(':root');
-  const rootStyles = getComputedStyle(root);
-  const baseColor = rootStyles.getPropertyValue('--base-color');
-
   root.style.setProperty('--base-color-h', Math.floor(Math.random() * 360) + 1);
 
-  const menuBtn = document.getElementById('menu-button');
-  const menuItems = document.querySelectorAll('.js-menu-item');
+  var isMenuActive = localStorage.getItem("isMenuActive");
 
-  menuBtn.addEventListener("click", event => {
-    document.body.classList.toggle("menu-active");
-  });
+    const menuBtn = document.getElementById("menu-button");
+    menuBtn.addEventListener("click", (event) => {
+        menuToggle();
+      }
+    );
 
+    const menuOpen = function () {
+      document.body.classList.add("menu-active");
+      localStorage.setItem("isMenuActive", true);
+    };
+
+    const menuClose = function () {
+      document.body.classList.remove("menu-active");
+      localStorage.setItem("isMenuActive", false);
+    };
+
+    const menuToggle = function () {
+      isMenuActive = localStorage.getItem("isMenuActive");
+      if (isMenuActive == "true") {
+        menuClose();
+      } else {
+        menuOpen();
+      }
+    };
+  
+  if (isMenuActive) {
+    menuOpen();
+  }
+  
 })();
