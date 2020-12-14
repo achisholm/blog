@@ -4,33 +4,34 @@
 
   var isMenuActive = localStorage.getItem("isMenuActive");
 
-    const menuBtn = document.getElementById("menu-button");
-    menuBtn.addEventListener("click", (event) => {
-        menuToggle();
-      }
-    );
+  var menuBtn = document.getElementById("menu-button");
+  menuBtn.addEventListener("click", (event) => {
+      menuToggle();
+    }
+  );
 
-    const menuOpen = function () {
-      document.body.classList.add("menu-active");
-      localStorage.setItem("isMenuActive", true);
-    };
+  var menuOpen = function () {
+    document.body.classList.add("menu-active");
+    localStorage.setItem("isMenuActive", true);
+  };
 
-    const menuClose = function () {
-      document.body.classList.remove("menu-active");
-      localStorage.setItem("isMenuActive", false);
-    };
+  var menuClose = function () {
+    document.body.classList.remove("menu-active");
+    localStorage.setItem("isMenuActive", false);
+  };
 
-    const menuToggle = function () {
-      isMenuActive = localStorage.getItem("isMenuActive");
-      if (isMenuActive == "true") {
-        menuClose();
-      } else {
-        menuOpen();
-      }
-    };
-  
+  var menuToggle = function () {
+    isMenuActive = localStorage.getItem("isMenuActive");
+    if (isMenuActive == "true") {
+      menuClose();
+    } else {
+      menuOpen();
+    }
+  };
+
   if (isMenuActive) {
     menuOpen();
   }
   
+    
 })();

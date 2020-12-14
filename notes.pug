@@ -1,12 +1,17 @@
 extends _includes/layout
 block vars
-  - const title = "Notes", activeMenuItem = "notes"
-
+  - var title = "Notes", activeMenuItem = "notes"
 block content
     h1.content__heading Notes
 
-    for post in collections.all
-        div
+    for post in collections.posts
+        div.post
             a(href=post.url)
-                h1= post.data.title
-                p= post.data.date
+                h1.heading= post.data.title
+                time.para= formatDate(post.data.date)
+                
+    style.
+      .post {}
+      .post a {
+        text-decoration: none;
+      }

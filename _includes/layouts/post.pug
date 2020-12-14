@@ -3,5 +3,8 @@ block vars
   - const activeMenuItem = "notes"
 
 block content
-  h1= title
+  h1.heading= title
+  time= formatDate(date)
   != content
+
+  a.button(href=`mailto:alistair@fastmail?subject=${title}`) Reply via email

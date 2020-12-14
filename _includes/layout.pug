@@ -1,3 +1,10 @@
+-
+  var formatDate = (dateString) => {
+    // Convert a Date string into a readable format.
+    var options = { year: "numeric", month: "long", day: "numeric" }
+    return new Date(dateString).toLocaleDateString(undefined, options)
+  }
+
 block vars
 doctype html
 html(lang="en-GB")
@@ -6,7 +13,12 @@ html(lang="en-GB")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     
     title #{title}
+
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet")
+
     link(rel="stylesheet" href="/css/core.css")
+    
     
     meta(property="og:title" content="Alistair Chisholm")
     meta(property="og:site_name" content="alistairchisholm.co.uk")
@@ -15,19 +27,22 @@ html(lang="en-GB")
     meta(property="og:url" content="https://alistairchisholm.co.uk")
     meta(name="twitter:site" content="@ayepod")
     meta(name="twitter:card" content="summary_large_image")
+    
   
   body
+    //- div(style="background:red;color: white;padding: 20px; margin: 10px;") Warning. Redesign happening.
     nav.app-nav
       .button.menu-button#menu-button MENU
       .app-nav__items
         a.app-nav__item.js-menu-item(href='/')&attributes({class: (activeMenuItem == 'about' ? 'is-active': '')}) About
         a.app-nav__item.js-menu-item(href='/notes')&attributes({class: (activeMenuItem == 'notes' ? 'is-active': '')}) Notes
 
-    .profile Alistair Chisholm
+    a.profile(href='/') Alistair Chisholm
       .profile__avatar
     
-    .container
+    main.container
       .container__content
         block content
     block footer
-      script(src="/scripts/core.js")
+
+    script(src="/scripts/core.js")

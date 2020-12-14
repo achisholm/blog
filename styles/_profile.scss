@@ -13,6 +13,7 @@
   right: calc(var(--base-unit) * 2);
   transition: 0.1s opacity ease;
   color: rgba(black, 0.5);
+  text-decoration: none;
 
   .menu-active & {
     // .menu-active .profile
