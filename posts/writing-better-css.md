@@ -9,7 +9,7 @@ category:
 ---
 It seems to be an unpopular opinion, but I still love Cascading Stylesheets. Here are a few tips I have learnt for writing better CSS.
 
-If you are a fan of modern methods such as 'styled components' or whatever the latest flavour of CSS-in-JS is called, some of these opinions might sound dated.
+If you are a fan of modern paradigms such as 'styled components' or whatever the latest flavour of CSS-in-JS is called, some of these opinions might sound dated.
 
 ## 1. Low specificity good
 
