@@ -9,7 +9,7 @@ category:
 ---
 It seems to be an unpopular opinion, but I still love Cascading Stylesheets. Here are a few tips I have learnt for writing better CSS.
 
-## 1. Always be reducing specificity
+## 1. Low Specificity Good
 
 Specificity &mdash; as a word, I find it's hard to pronounce. How a specificity value is calculated as a concept to grasp as a web developer, is even harder.
 
@@ -17,21 +17,21 @@ My way of handling specificity has been to side-step the issue entirely by using
 
 If all declarations have low and equal specificity, you are then in a great position to harness the power of the cascade. By that, I mean adjusting the specificity naturally by means of ordering as a way to override conflicting rules.
 
-## 2. Use The cascade to your advantage
+## 2. Use the cascade to your advantage
 
-By design, web browsers read the order in which you declare your CSS. Source order is a powerful and easily understandable way for browsers and also you to decide what rules should get priority.
+Inheritance and the cascade are features, not bugs. By design, web browsers read the order in which you declare CSS. Source order is one of the most powerful and easily understandable ways for browsers (and also you) to decide what rules should get priority.
 
-Here is a sane order in which styles should be layered, starting with most general first, gradually increasing in specificity:
+This is a sane order in which styles could be layered, ordered with most general first, each layer increasing in specificity with highly-specific rules included last:
 
-- Global, generic
-- Base
-- UI component-specific
-- Page-specific
-- Atomic-level, utility
+* Global, generic
+* Base
+* UI component-specific
+* Page-specific
+* Atomic-level, utility
 
 Whether you use a single stylesheet or need to split up stylesheets into separate files, the same rules apply.
 
-Please, don't just tag on some changes at the end of your stylesheet. Use source order to help guide where this new feature should live.
+Please, don't just tag on changes at the end of your stylesheet. Use source order to help guide where this new feature should exist.
 
 ## 3. Set global styles sparingly
 
@@ -39,7 +39,7 @@ As a project scales up over time, the usefulness of global styles tends to dimin
 
 If possible, just don't style bare HTML elements and you will probably thank yourself later.
 
-## 4. You might not need that reset
+## 4. You might not need a reset
 
 If confronted with a vast amount of crossed-out rules in the Developer Tools inspector, it's generally a sign that your stylesheets can be simplified.
 
