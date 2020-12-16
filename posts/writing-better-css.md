@@ -9,11 +9,13 @@ category:
 ---
 It seems to be an unpopular opinion, but I still love Cascading Stylesheets. Here are a few tips I have learnt for writing better CSS.
 
-## 1. Low Specificity Good
+If you are a fan of modern paradigms such as 'styled components' or whatever the latest flavour of CSS-in-JS is called, some of these opinions might sound dated.
+
+## 1. Low specificity good
 
 Specificity &mdash; as a word, I find it's hard to pronounce. How a specificity value is calculated as a concept to grasp as a web developer, is even harder.
 
-My way of handling specificity has been to side-step the issue entirely by using selectors with just enough specificity, and no more.
+My way of taming specificity has been to side-step the issue entirely by using selectors with just enough specificity, and no more.
 
 If all declarations have low and equal specificity, you are then in a great position to harness the power of the cascade. By that, I mean adjusting the specificity naturally by means of ordering as a way to override conflicting rules.
 
@@ -41,9 +43,9 @@ If possible, just don't style bare HTML elements and you will probably thank you
 
 ## 4. You might not need a reset
 
-If confronted with a vast amount of crossed-out rules in the Developer Tools inspector, it's generally a sign that your stylesheets can be simplified.
+If ever confronted with layers of crossed-out rules in Developer Tools inspector, this is a sign that your stylesheets should be simplified.
 
-There was a time where a CSS reset was helpful and in fact necessary to establish some kind of common baseline across browsers. These days, I'd say it's not so neccessary. I like to try removing a heavy-handed CSS reset and seeing what breaks, and more often than not, it is surprisingly little.
+There was a time where a CSS reset was helpful and in fact necessary to establish some kind of common baseline across browsers. These days, I'd say it's not so necessary. I like to try removing a heavy-handed CSS reset and seeing what breaks, and more often than not, it is surprisingly little.
 
 ## 5. Be generous with whitespace
 
