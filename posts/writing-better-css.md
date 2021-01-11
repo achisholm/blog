@@ -2,34 +2,36 @@
 title: Writing better CSS
 date: 2020-12-11
 summary: It seems to be an unpopular opinion, but I still love Cascading Stylesheets.
-tags:
-  - css
+category:
+  - CSS
 ---
 Here are a few tips I have learnt for writing better CSS.
 
-## 1. Always be reducing specificity
+If you are a fan of modern paradigms such as 'styled components' or whatever the latest flavour of CSS-in-JS is called, some of these opinions might sound dated.
+
+## 1. Low specificity good
 
 Specificity &mdash; as a word, I find it's hard to pronounce. How a specificity value is calculated as a concept to grasp as a web developer, is even harder.
 
-My way of handling specificity has been to side-step the issue entirely by using selectors with just enough specificity, and no more.
+My way of taming specificity has been to side-step the issue entirely by using selectors with just enough specificity, and no more.
 
 If all declarations have low and equal specificity, you are then in a great position to harness the power of the cascade. By that, I mean adjusting the specificity naturally by means of ordering as a way to override conflicting rules.
 
-## 2. Use The cascade to your advantage
+## 2. Use the cascade to your advantage
 
-By design, web browsers read the order in which you declare your CSS. Source order is a powerful and easily understandable way for browsers and also you to decide what rules should get priority.
+Inheritance and the cascade are features, not bugs. By design, web browsers read the order in which you declare CSS. Source order is one of the most powerful and easily understandable ways for browsers (and also you) to decide what rules should get priority.
 
-Here is a sane order in which styles should be layered, starting with most general first, gradually increasing in specificity:
+This is a sane order in which styles could be layered, ordered with most general first, each layer increasing in specificity with highly-specific rules included last:
 
-- Global, generic
-- Base
-- UI component-specific
-- Page-specific
-- Atomic-level, utility
+* Global, generic
+* Base
+* UI component-specific
+* Page-specific
+* Atomic-level, utility
 
 Whether you use a single stylesheet or need to split up stylesheets into separate files, the same rules apply.
 
-Please, don't just tag on some changes at the end of your stylesheet. Use source order to help guide where this new feature should live.
+Please, don't just tag on changes at the end of your stylesheet. Use source order to help guide where this new feature should exist.
 
 ## 3. Set global styles sparingly
 
@@ -37,11 +39,11 @@ As a project scales up over time, the usefulness of global styles tends to dimin
 
 If possible, just don't style bare HTML elements and you will probably thank yourself later.
 
-## 4. You might not need that reset
+## 4. You might not need a reset
 
-If confronted with a vast amount of crossed-out rules in the Developer Tools inspector, it's generally a sign that your stylesheets can be simplified.
+If ever confronted with layers of crossed-out rules in Developer Tools inspector, this is a sign that your stylesheets should be simplified.
 
-There was a time where a CSS reset was helpful and in fact necessary to establish some kind of common baseline across browsers. These days, I'd say it's not so neccessary. I like to try removing a heavy-handed CSS reset and seeing what breaks, and more often than not, it is surprisingly little.
+There was a time where a CSS reset was helpful and in fact necessary to establish some kind of common baseline across browsers. These days, I'd say it's not so necessary. I like to try removing a heavy-handed CSS reset and seeing what breaks, and more often than not, it is surprisingly little.
 
 ## 5. Be generous with whitespace
 
