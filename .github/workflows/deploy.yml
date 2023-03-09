@@ -30,22 +30,17 @@ jobs:
         run: npm install
       - name: Build site
         run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: site
           path: public
-  # Deploy job
   deploy:
-    # Add a dependency to the build job
     needs: build
-
-    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
