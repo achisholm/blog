@@ -8,15 +8,15 @@
     "build:content": "eleventy",
     "build:css": "run-s scss autoprefixer",
     "debug": "DEBUG=Eleventy* eleventy",
-    "scss": "sass --output public/css styles",
+    "scss": "sass styles:public/css",
     "serve": "browser-sync start --server 'public' --files 'public/css/*.css, public/scripts/*.js, **/*.html, !node_modules/**/*.html' --no-notify",
     "start": "eleventy --serve",
     "watch": "run-p serve watch:*",
     "watch:content": "eleventy --watch",
-    "watch:css": "sass --watch styles/ -o public/css/"
+    "watch:css": "sass -w styles:public/css"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.6.0",
+    "@11ty/eleventy": "2.0.0",
     "autoprefixer": "^9.4.5",
     "browser-sync": "^2.26.3",
     "markdown-it": "^12.0.3",
