@@ -7,7 +7,7 @@
     "build:content": "eleventy",
     "build:css": "run-s scss",
     "debug": "DEBUG=Eleventy* eleventy",
-    "scss": "sass styles:public/css",
+    "scss": "sass --embed-sources styles:public/css",
     "serve": "browser-sync start --server 'public' --files 'public/css/*.css, public/scripts/*.js, **/*.html, !node_modules/**/*.html' --no-notify",
     "start": "eleventy --serve",
     "watch": "run-p serve watch:*",
