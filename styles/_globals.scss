@@ -15,7 +15,7 @@
   padding: var(--base-unit);
   box-sizing: border-box;
   background-color: var(--base-color);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
   &:active .baseline-grid:after {
     // :root:active .baseline-grid:after
@@ -30,7 +30,7 @@ html {
 body {
   font-size: var(--base-unit);
   line-height: calc(var(--base-unit) * 2);
-  display: flex;
+  // display: flex;
   margin: 0;
   color: var(--text-color);
 }

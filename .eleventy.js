@@ -25,7 +25,6 @@ module.exports = function (config) {
 
     // Copy these directories
     config.addPassthroughCopy('scripts');
-    config.addPassthroughCopy('admin');
     config.addPassthroughCopy("images");
         
     // return your Config object

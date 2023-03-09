@@ -6,10 +6,10 @@
   // White bg content container.
   display: flex;
   flex: 1 1 auto;
-  background-color: white;
-  padding: var(--base-unit);
-  box-shadow: 0 0 10px 10px rgba(black, 0.02);
-  border-radius: 20px;
+  // background-color: white;
+  // padding: var(--base-unit);
+  // box-shadow: 0 0 10px 10px rgba(black, 0.02);
+  // border-radius: 20px;
 
   &__content {
     // .container__content
@@ -19,53 +19,5 @@
     padding-right: var(--base-unit);
     margin: 0 auto;
     max-width: 45rem;
-
-    &::-webkit-scrollbar {
-      $size: 10px;
-      // ::-webkit-scrollbar
-      // The background of the scrollbar, covered by the other elements.
-      height: $size;
-      width: $size;
-
-      &-button {
-        // ::-webkit-scrollbar-button
-        // Directional buttons on the scrollbar.
-        height: 0;
-        width: 0;
-      }
-
-      &-corner {
-        // ::-webkit-scrollbar-corner
-        // Bottom corner of the scrollable element, where two
-        // scrollbars meet.
-        background: transparent;
-      }
-
-      &-thumb {
-        // ::-webkit-scrollbar-thumb
-        // Draggable scrolling handle that resizes depending on the size
-        // of the scrollable area.
-        background-color: var(--base-color);
-        min-height: 30px;
-        border-radius: $size;
-        margin: 2px;
-      }
-
-      &-track {
-        // ::-webkit-scrollbar-track
-        // The track (progress bar) of the scrollbar.
-        background-color: rgba(black, 0.025);
-        transition: background-color 0.3s ease;
-        &:hover {
-          // ::-webkit-scrollbar-track:hover
-          background-color: rgba(black, 0.05);
-        }
-
-        &:active {
-          // ::-webkit-scrollbar-track:active
-          background-color: rgba(black, 0.05);
-        }
-      }
-    }
   }
 }

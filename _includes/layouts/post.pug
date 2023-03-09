@@ -7,4 +7,4 @@ block content
   time= formatDate(date)
   != content
 
-  a.button(href=`mailto:alistair@fastmail?subject=${title}`) Reply via email
+  a.button(href=`mailto:alistair@fastmail.com?subject=${encodeURIComponent(title)}`) Reply via email
