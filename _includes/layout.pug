@@ -19,26 +19,25 @@ html(lang="en-GB")
 
     link(rel="stylesheet" href="/css/core.css")
     
-    
     meta(property="og:title" content="Alistair Chisholm")
-    meta(property="og:site_name" content="alistairchisholm.co.uk")
-    meta(property="og:description" content="My website. There are many like it but this one is mine.")
+    meta(property="og:site_name" content="blog.alistairchisholm.co.uk")
+    meta(property="og:description" content="My blog. There are many like it but this one is mine.")
     meta(property="og:image" content="/images/profile.jpg")
-    meta(property="og:url" content="https://alistairchisholm.co.uk")
+    meta(property="og:url" content="https://blog.alistairchisholm.co.uk")
     meta(name="twitter:site" content="@ayepod")
     meta(name="twitter:card" content="summary_large_image")
-    
-  
+
   body
     //- div(style="background:red;color: white;padding: 20px; margin: 10px;") Warning. Redesign happening.
+
     nav.app-nav
-      .button.menu-button#menu-button MENU
+      //- .button.menu-button#menu-button MENU
       .app-nav__items
-        a.app-nav__item.js-menu-item(href='/')&attributes({class: (activeMenuItem == 'about' ? 'is-active': '')}) About
+        //- a.app-nav__item.js-menu-item(href='/')&attributes({class: (activeMenuItem == 'about' ? 'is-active': '')}) About
         a.app-nav__item.js-menu-item(href='/notes')&attributes({class: (activeMenuItem == 'notes' ? 'is-active': '')}) Notes
 
-    a.profile(href='/') Alistair Chisholm
-      .profile__avatar
+    //- a.profile(href='/') Alistair Chisholm
+    //-   .profile__avatar
     
     main.container
       .container__content
